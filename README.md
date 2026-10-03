@@ -15,6 +15,8 @@ Use **Select** inside a bucket to choose one or more project copies and delete t
 
 Swipe a clip or project left to reveal deletion with confirmation. CreatorBucket also checks its project copies when it opens or returns to the foreground, removing records for files deleted manually outside the app.
 
+Cancelling a swipe deletion restores the item immediately. Missing older MediaStore records are checked too, so buckets whose previously imported files were removed manually are cleaned up.
+
 Use **Done with this project** only after sharing or exporting it. It asks for confirmation, then deletes the project copies while leaving original camera videos alone.
 
 The default home view is **Footage timeline**. Switch to **Dashboard tiles** or **Project gallery** from the gear menu. Export creates numbered names for clips that already exist in the destination, so it never overwrites a prior export.
