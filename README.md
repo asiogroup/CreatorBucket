@@ -13,6 +13,8 @@ CreatorBucket keeps its working footage in private app storage, outside Gallery 
 
 Use **Select** inside a bucket to choose one or more project copies and delete them. CreatorBucket asks for confirmation and leaves the original camera videos alone. Tap any clip to preview it in the phone's video player.
 
+Swipe a clip or project left to reveal deletion with confirmation. CreatorBucket also checks its project copies when it opens or returns to the foreground, removing records for files deleted manually outside the app.
+
 Use **Done with this project** only after sharing or exporting it. It asks for confirmation, then deletes the project copies while leaving original camera videos alone.
 
 The default home view is **Footage timeline**. Switch to **Dashboard tiles** or **Project gallery** from the gear menu. Export creates numbered names for clips that already exist in the destination, so it never overwrites a prior export.
