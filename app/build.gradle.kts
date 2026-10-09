@@ -8,7 +8,7 @@ android {
     namespace = "com.example.bucket"
     compileSdk = 36
     defaultConfig {
-        applicationId = "com.example.bucket"
+        applicationId = "com.techtippr.creatorbucket"
         minSdk = 26
         targetSdk = 36
         versionCode = 8
