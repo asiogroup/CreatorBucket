@@ -1,7 +1,14 @@
+import java.util.Properties
+
 plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.compose.compiler)
   alias(libs.plugins.kotlin.serialization)
+}
+
+val signingProperties = Properties().apply {
+    val signingFile = rootProject.file("creatorbucket-signing.properties")
+    if (signingFile.exists()) signingFile.inputStream().use(::load)
 }
 
 android {
@@ -15,10 +22,21 @@ android {
         versionName = "1.7"
     }
 
+    signingConfigs {
+        create("release") {
+            if (signingProperties.isNotEmpty()) {
+                storeFile = rootProject.file(signingProperties.getProperty("storeFile"))
+                storePassword = signingProperties.getProperty("storePassword")
+                keyAlias = signingProperties.getProperty("keyAlias")
+                keyPassword = signingProperties.getProperty("keyPassword")
+            }
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            if (signingProperties.isNotEmpty()) signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {

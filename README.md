@@ -34,6 +34,16 @@ android run --apks app/build/outputs/apk/debug/app-debug.apk --device <device-id
 
 The debug APK is written to `app/build/outputs/apk/debug/app-debug.apk`.
 
+## Google Play release build
+
+Build a release App Bundle with:
+
+```sh
+./gradlew :app:bundleRelease
+```
+
+The bundle is written to `app/build/outputs/bundle/release/app-release.aab`. The local upload-key settings are intentionally excluded from Git. Store the upload key securely: Google Play App Signing uses it to authenticate future uploads.
+
 ## Current scope
 
 - Receives single and multiple `video/*` items from the Android Share sheet.
